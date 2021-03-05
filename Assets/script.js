@@ -17,9 +17,9 @@ function currentWeather (city) {
         })
         .then(function (response) {
             console.log(response);
-            var h1 = document.createElement("h1");
-            h1.textContent = response.name;
-            document.getElementById ("currentInfo").append(h1);
+            var h2 = document.createElement("h2");
+            h2.textContent = response.name;
+            document.getElementById ("currentInfo").append(h2);
         });
 }
 
