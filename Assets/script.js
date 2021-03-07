@@ -26,7 +26,10 @@ function currentWeather(city) {
             var h2 = document.createElement("h2");
             h2.textContent = response.name;
             document.getElementById("currentInfo").append(h2);
-        });
+        })
+    .then(function (data) {
+         
+    });    
 }
 
 function fivedayForecast(city) {
