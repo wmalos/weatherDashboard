@@ -27,6 +27,14 @@ function currentWeather(city) {
         .then(function (data) {
             return data.json();
         })
+    
+    .then(function (response) {
+        console.log(response);
+        var h2 = document.createElement("h2");
+        h2.textContent = response.name;
+        document.getElementById("currentInfo").append(h2);
+    })    
+
     fetch(url)
         .then(function (response) {
             return response.json();
@@ -34,16 +42,10 @@ function currentWeather(city) {
         
     .then(function (data) {
         document.getElementById("cityName").textContent = data.name;
-        document.getElementById("temp").textContent = "Temperature: " + data.main.temp + " K";
+        document.getElementById("temp").textContent = "Temperature: " + data.main.temp + " F";
         document.getElementById("humidity").textContent = "Humidity: " + data.main.humidity + "%";
         document.getElementById("windSpeed").textContent = "Wind Speed: " + data.wind.speed + "mph";
-    })
-    .then(function (response) {
-        console.log(response);
-        var h2 = document.createElement("h2");
-        h2.textContent = response.name;
-        document.getElementById("currentInfo").append(h2);
-    })
+    })   
 }
 
 function fivedayForecast(city) {
